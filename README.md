@@ -9,7 +9,7 @@
 
    Baja el 'instalador' de laravel que nos va a permitir crear proyectos
 
-3. `laravel new iugo-demo` / `composer create-project --prefer-dist laravel/laravel iugo-demo` (sin bajar el instalador):
+3. `laravel new laravel-demo` / `composer create-project --prefer-dist laravel/laravel laravel-demo` (sin bajar el instalador):
 
    Crea una carpeta con el nombre del proyecto y todo lo requerido por el ultimo Laravel, incluidas dependencias de composer
    Automaticamente se hace el php artisan key:generate, si por alguna razon no se hizo entonces: 
