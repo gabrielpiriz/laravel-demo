@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +18,10 @@ Route::get('/', function () {
     return redirect()->route('posts.index');
 });
 
+Route::get('/post/{id}', 'PostsController@show')->name('posts.show'); //muestra el detalle de un post
+
 Auth::routes();
+
+Route::resource('posts.comments', CommentsController::class); //el orden importa
 
 Route::resource('posts', 'PostsController');
