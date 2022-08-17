@@ -12,4 +12,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'posts_id'); //relacion con los comentarios
+    }
 }
