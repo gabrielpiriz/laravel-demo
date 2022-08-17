@@ -33,6 +33,26 @@
                 {!! nl2br(e($post->content)) !!}
                 </div>
                 <div class="card-footer">
+                <div class="card-body">
+                    <ul class="list-group">
+                        @forelse($post->comments as $comment)
+                            <a class="text-dark" href="{{ route('posts.comments.show', [$post->id, $comment->id]) }}">
+                                <li class="list-group-item d-flex align-items-center justify-content-between">
+                                {{$comment->user->name}} 
+                                <span>
+                                        {{$comment->content}}
+                                    </span>
+
+                                    <i class="fas fa-chevron-right float-right"></i>
+                                </li>
+                            </a>
+                        @empty
+                            <li class="list-group-item">
+                                Todavía no hay ningún comentario.
+                            </li>
+                        @endforelse
+                    </ul>
+                </div>
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h4 class="title m-0">
                         Comentarios

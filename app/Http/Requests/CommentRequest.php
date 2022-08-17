@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
+
 //Validar información que se envia del comentario que se quiere insertar
 class CommentRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class CommentRequest extends FormRequest
      */
     public function authorize()
     {
-        return \Auth::check(); //usuario logueado?
+        return Auth::check(); //usuario logueado?
     }
 
     /**

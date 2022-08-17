@@ -15,6 +15,6 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany('App\Comment'); //relacion con los comentarios
+        return $this->hasMany('App\Comment', 'posts_id'); //relacion con los comentarios
     }
 }

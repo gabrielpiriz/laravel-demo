@@ -38,7 +38,7 @@ class CommentsController extends Controller
      */
     public function store(CommentRequest $request, Post $post)
     {
-        $comment = new Comment($request->validated());//nuevo comentario no esta asociado
+        $comment = new Comment($request->validated());//nuevo comentario sin asociar
         $comment->user()->associate(Auth::user());// asociamos el comentario al usuario
         $comment->post()->associate($post); //asociamos el comentario al post
         $comment->save();
@@ -54,7 +54,7 @@ class CommentsController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
+        //return view('posts.comments.show', compact('comments'));
     }
 
     /**
