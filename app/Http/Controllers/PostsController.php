@@ -61,7 +61,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        dd($post->comments()->with('user:name,id')->get()); //si tiene un metodo que es una query lo ejecuta. esto lo trae de la BD
+       // dd($post->comments()->with('user:name,id')->get()); //si tiene un metodo que es una query lo ejecuta. esto lo trae de la BD
         return view('posts.show', compact('post'));
     }
 
